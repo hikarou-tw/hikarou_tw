@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hikarou</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at bottom, #0a0f2c 0%, #000000 70%);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Étoiles animées */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: url("https://www.transparenttextures.com/patterns/stardust.png");
+    animation: starsMove 100s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes starsMove {
+    from { transform: translate(0,0); }
+    to { transform: translate(-1000px, -500px); }
+}
+
+/* Lune */
+.moon {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle at 30% 30%, #fff, #ccc);
+    border-radius: 50%;
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    box-shadow: 0 0 40px white;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Manette néon */
+.controller {
+    font-size: 80px;
+    margin-top: 40px;
+    color: #00f7ff;
+    text-shadow:
+        0 0 10px #00f7ff,
+        0 0 20px #00f7ff,
+        0 0 40px #00f7ff;
+    animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+    from { text-shadow: 0 0 10px #00f7ff; }
+    to { text-shadow: 0 0 40px #00f7ff; }
+}
+
+.container {
+    margin-top: 150px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 50px;
+    color: violet;
+    text-shadow: 0 0 20px violet;
+}
+
+/* Réseaux */
+.socials {
+    margin-top: 40px;
+}
+
+.socials a {
+    display: block;
+    margin: 15px auto;
+    width: 250px;
+    padding: 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    border: 2px solid violet;
+    transition: 0.3s;
+    background: rgba(255,255,255,0.05);
+}
+
+.socials a:hover {
+    background: violet;
+    box-shadow: 0 0 20px violet;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 35px;
+    }
+    .controller {
+        font-size: 60px;
+    }
+    .moon {
+        width: 80px;
+        height: 80px;
+        top: 20px;
+        right: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="moon"></div>
+
+<div class="container">
+    <h1>HIKAROU</h1>
+    <div class="controller">🎮</div>
+    <p>Bienvenue dans mon univers nocturne 🌙</p>
+
+    <div class="socials">
+        <a href="https://discord.gg/FHga6RaFAj">Discord</a>
+        <a href="N/A">Instagram</a>
+        <a href="https://www.tiktok.com/@hikarou_tw">TikTok</a>
+        <a href="https://www.twitch.tv/hikarou_tw">Twitch</a>
+        <a href="N/A">YouTube</a>
+    </div>
+</div>
+
+
