@@ -3,40 +3,96 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Présentation - Hikarou</title>
+<title>Planning - Hikarou</title>
 
 <style>
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #000000, #0a0f2c);
+    background: radial-gradient(circle at top, #0a0f2c, #000000 70%);
     color: white;
     text-align: center;
+    overflow-x: hidden;
+}
+
+/* Étoiles animées */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: url("https://www.transparenttextures.com/patterns/stardust.png");
+    animation: stars 120s linear infinite;
+    opacity: 0.25;
+}
+
+@keyframes stars {
+    from { transform: translate(0,0); }
+    to { transform: translate(-1500px,-800px); }
 }
 
 .container {
-    padding: 50px 20px;
+    padding: 60px 20px;
 }
 
 h1 {
-    color: violet;
-    text-shadow: 0 0 20px violet;
+    font-size: 45px;
+    color: #00f7ff;
+    text-shadow: 0 0 20px #00f7ff;
+    margin-bottom: 40px;
 }
 
-.card {
+.schedule {
+    max-width: 700px;
+    margin: auto;
+}
+
+.day {
     background: rgba(255,255,255,0.05);
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 500px;
-    border-radius: 20px;
     border: 2px solid violet;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 15px 0;
+    transition: 0.3s;
 }
 
-a {
-    display: inline-block;
-    margin-top: 20px;
+.day:hover {
+    box-shadow: 0 0 20px violet;
+    transform: scale(1.03);
+}
+
+.day h2 {
+    margin: 0 0 10px 0;
     color: violet;
+}
+
+.time {
+    font-size: 18px;
+    color: #00f7ff;
+}
+
+/* Bouton retour */
+.back {
+    margin-top: 40px;
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: 2px solid #00f7ff;
+    color: white;
     text-decoration: none;
+    transition: 0.3s;
+}
+
+.back:hover {
+    background: #00f7ff;
+    box-shadow: 0 0 20px #00f7ff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 32px;
+    }
 }
 </style>
 </head>
@@ -44,17 +100,52 @@ a {
 <body>
 
 <div class="container">
-    <h1>Présentation</h1>
+    <h1>🎮 Planning Stream</h1>
 
-    <div class="card">
-        <p>Bienvenue dans mon univers nocturne 🌙</p>
-        <p>Pseudo : Hikarou</p>
-        <p>Passions : Gaming 🎮 | Anime ✨ | Chill Night 🌌</p>
-        <p>Objectif : Créer un espace stylé et communautaire</p>
+    <div class="schedule">
+
+        <div class="day">
+            <h2>Lundi</h2>
+            <div class="time">20h00 - 22h30 | Chill Gaming 🌙</div>
+        </div>
+
+        <div class="day">
+            <h2>Mardi</h2>
+            <div class="time">Repos ✨</div>
+        </div>
+
+        <div class="day">
+            <h2>Mercredi</h2>
+            <div class="time">18h00 - 21h00 | Valorant / FPS 🔥</div>
+        </div>
+
+        <div class="day">
+            <h2>Jeudi</h2>
+            <div class="time">20h30 - 23h00 | Roblox Fun 🎲</div>
+        </div>
+
+        <div class="day">
+            <h2>Vendredi</h2>
+            <div class="time">21h00 - 00h00 | Night Stream 🌌</div>
+        </div>
+
+        <div class="day">
+            <h2>Samedi</h2>
+            <div class="time">16h00 - 19h00 | Communauté & Chill 💬</div>
+        </div>
+
+        <div class="day">
+            <h2>Dimanche</h2>
+            <div class="time">Repos ou surprise 👀</div>
+        </div>
+
     </div>
 
-    <a href="index.html">⬅ Retour à l'accueil</a>
+    <a href="index.html" class="back">⬅ Retour à l'accueil</a>
+
 </div>
 
 </body>
 </html>
+
+
